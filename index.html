@@ -78,17 +78,18 @@
     <section id="contact">
 
         <H2>Please leave your contact information</H2>
-        <form id="form">
+        <form action="#" id="form">
 
             <div class="divContact">
                 <label for="name">Full name</label>
-                <input type="text" id="name" required>
+                <input type="text" id="name">
                 <span id="nameError" class="error"></span>
             </div>
 
             <div class="divContact">
                 <label for="email">Email address</label>
-                <input type="email" id="email" required>
+                <!-- if I use type 'URL' for email form shows mistake before my validaition -->
+                <input type="text" id="email">
                 <span id="emailError" class="error"></span>
             </div>
 
@@ -98,7 +99,7 @@
             </div>
 
             <div class="divContact">
-                <button type="submit" id="save-btn">Submit</button>
+                <button type="submit" id="submitBtn">Submit</button>
             </div>
 
         </form>

@@ -34,46 +34,74 @@
 
             <div class="container1">
                 <img src="images/Project1.jpg">
-                <p hidden><span>Project #1</span><br><br>There will be project description. There will be project
+                <p hidden><span class="bold">Project #1</span><br><br>There will be project description. There will be
+                    project
                     description.<br><br>There will be project description.There will be project
                     description.<br><br>There will be project description. There will be project
                     description.<br><br>There will be project description.There will be project description.</p>
-                <button id="project1Btn">Show details</button>
+                <button id="project1Btn" class="projectBtn">Show details</button>
             </div>
 
             <div class="container2">
                 <img src="images/Project2.jpg">
-                <p hidden><span>Project #2</span><br><br>There will be project description. There will be project
+                <p hidden><span class="bold">Project #2</span><br><br>There will be project description. There will be
+                    project
                     description.<br><br>There will be project description.There will be project
                     description.<br><br>There will be project description. There will be project
                     description.<br><br>There will be project description.There will be project description.</p>
-                <button id="project2Btn">Show details</button>
+                <button id="project2Btn" class="projectBtn">Show details</button>
             </div>
 
             <div class="container3">
                 <img src="images/Project3.jpg">
-                <p hidden><span>Project #3</span><br><br>There will be project description. There will be project
+                <p hidden><span class="bold">Project #3</span><br><br>There will be project description. There will be
+                    project
                     description.<br><br>There will be project description.There will be project
                     description.<br><br>There will be project description. There will be project
                     description.<br><br>There will be project description.There will be project description.</p>
-                <button id="project3Btn">Show details</button>
+                <button id="project3Btn" class="projectBtn">Show details</button>
             </div>
 
             <div class="container4">
                 <img src="images/Project4.jpg">
-                <p hidden><span>Project #4</span><br><br>There will be project description. There will be project
+                <p hidden><span class="bold">Project #4</span><br><br>There will be project description. There will be
+                    project
                     description.<br><br>There will be project description.There will be project
                     description.<br><br>There will be project description. There will be project
                     description.<br><br>There will be project description.There will be project description.</p>
-                <button id="project4Btn">Show details</button>
+                <button id="project4Btn" class="projectBtn">Show details</button>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact Me</h2>
-        <p>There will be a contact form.</p>
+
+        <H2>Please leave your contact information</H2>
+        <form id="form">
+
+            <div class="divContact">
+                <label for="name">Full name</label>
+                <input type="text" id="name" required>
+                <span id="nameError" class="error"></span>
+            </div>
+
+            <div class="divContact">
+                <label for="email">Email address</label>
+                <input type="email" id="email" required>
+                <span id="emailError" class="error"></span>
+            </div>
+
+            <div class="divContact">
+                <label for="message">Message</label>
+                <textarea id="message" rows="10"></textarea>
+            </div>
+
+            <div class="divContact">
+                <button type="submit" id="save-btn">Submit</button>
+            </div>
+
+        </form>
     </section>
 
     <!-- Footer Section -->

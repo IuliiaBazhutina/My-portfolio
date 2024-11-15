@@ -9,7 +9,12 @@ project4Btn.addEventListener('click', () => { checkButton('.container4') });
 
 // clicking submit button call checkValidation
 
-submitBtn.addEventListener('click', () => { checkValidation() });
+submitBtn.addEventListener('click', function (event) {
+
+    // cancel default behaviour of the form   
+    event.preventDefault();
+    checkValidation();
+});
 
 
 
@@ -39,19 +44,23 @@ function showDescription(containerName) {
     // get container by classname
     const container = document.querySelector(containerName);
 
-    // get height of div container
-    const divHeight = container.clientHeight;
+    // get height of the container divImg
+    const divImg = container.querySelector('.divImg');
+    const conteinerHeight = divImg.clientHeight;
 
     // hide the picture
     const img = container.querySelector('img');
     img.style.display = "none";
 
-    // assign height for the container
-    container.style.height = `${divHeight}px`;
-
     // show the description
     const text = container.querySelector('p');
     text.style.display = "block";
+
+    // make scroll visible
+    divImg.style.overflow = "scroll";
+
+    // assign height for the container
+    divImg.style.height = `${conteinerHeight}px`;
 
     // change button label
     const btn = container.querySelector('button');
@@ -73,6 +82,10 @@ function hideDescription(containerName) {
     // hide the description
     const text = container.querySelector('p');
     text.style.display = "none";
+
+    // hide scroll
+    const divImg = container.querySelector('.divImg');
+    divImg.style.overflow = "hidden";
 
     // change button label
     const btn = container.querySelector('button');
@@ -132,8 +145,9 @@ function validateEmail(email) {
 
     // If email failed the validation show error, otherwise call saveInfo
     if (!result) {
-        emailError.innerHTML = "Please check the email";}
-        else {saveInfo();}
+        emailError.innerHTML = "Please check the email";
+    }
+    else { saveInfo(); }
 }
 
 
@@ -146,12 +160,72 @@ function saveInfo() {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
+    const checkbox = document.getElementById('checkbox');
 
-    console.log("The name is: ", name);
-    console.log("The email is: ", email);
-    console.log("The message is: ", message);
+    console.log("Name: ", name);
+    console.log("Email: ", email);
+    console.log("Message: ", message);
+
+    if (checkbox.checked) {
+        getLocation();
+    }
 
     // reset the form
     const form = document.getElementById('form');
     form.reset();
+}
+
+
+
+// gets user's location
+
+function getLocation() {
+
+    // check if geolocation is supported
+    if (navigator.geolocation) {
+
+        // get user's current position
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+
+        // display an error if geolocation is not supported
+        console.error("Error: Geolocation is not supported by this browser");
+    }
+}
+
+
+
+// displays the user's position
+
+function showPosition(position) {
+
+    // Display the latitude and longitude
+    console.log(`Location: Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`);
+}
+
+
+
+// handles errors
+
+function showError(error) {
+
+    let msg = "";
+
+    // handle different error codes
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            msg = "User denied the request for Geolocation.";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            msg = "Location information is unavailable.";
+            break;
+        case error.TIMEOUT:
+            msg = "The request to get user location timed out.";
+            break;
+        case error.UNKNOWN_ERROR:
+            msg = "An unknown error occurred.";
+            break;
+    }
+
+    console.error("Error: ", msg);
 }

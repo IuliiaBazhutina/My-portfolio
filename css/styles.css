@@ -49,7 +49,6 @@ section {
 .gallery-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    justify-content: center;
     width: 100%;
 }
 
@@ -57,23 +56,30 @@ section {
 .container2,
 .container3,
 .container4 {
-    margin: auto;
+    margin: 0 auto;
     width: 90%;
     height: auto;
-    position: relative;
+    overflow: hidden;
+    padding: 0;
 }
 
 img {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    margin-bottom: 50px;
+}
+
+div.divImg {
+    margin: 0;
+    /* overflow-y: scroll; */
+    overflow-y: hidden;
 }
 
 p {
     width: fit-content;
     text-wrap: pretty;
     color: black;
+    margin: 0;
 }
 
 span.bold {
@@ -87,16 +93,18 @@ span.error {
 }
 
 form {
-    width: 100%;}
+    width: 100%;
+}
 
-    
+
 div.divContact {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
 }
 
-input, textarea {
+input,
+textarea {
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ddd;
@@ -104,30 +112,28 @@ input, textarea {
     width: 100%;
 }
 
+#checkbox {
+    width: auto;
+}
+
 button {
-    height: 30px;
     border-radius: 5px;
     background-color: #333;
     color: white;
     cursor: pointer;
+    width: 100%;
+    margin: 10px 0 0;
+    padding: 10px;
 }
 
 button:hover {
     background-color: rgb(153, 135, 88);
 }
 
-button.projectBtn {
-    width: 100%;
-    display: block;
-    margin: 10px auto;
-    position: absolute;
-    bottom: 0;
-}
-
 footer {
     background-color: #333;
     text-align: center;
-    padding: 10px;
+    padding: 25px;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -156,5 +162,9 @@ footer p {
     section {
         padding: 10px;
         margin: 10px;
+    }
+
+    p {
+        font-size: small;
     }
 }

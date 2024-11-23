@@ -170,64 +170,63 @@ footer p {
 
 
 /* Dark mode*/
-body.dark-mode {
+.dark-mode{
     background-color: black;
-}
 
-body.dark-mode header {
+ header {
     background-color: var(--dark-grey);
     color: var(--gold);
-}
+} 
 
-body.dark-mode h2 {
+ h2 {
     color: var(--light-grey);
 }
 
-body.dark-mode a {
+a {
     color: var(--light-grey);
     background-color: var(--dark-grey);
 }
 
-body.dark-mode section {
+section {
     background-color: var(--grey);
     color: var(--light-grey);
 }
 
-body.dark-mode div.divImg {
+div.divImg {
     background-color: var(--light-grey);
     color: black;
 }
 
-body.dark-mode p {
+p {
     color: var(--light-grey);
 }
 
-body.dark-mode div p {
+div p {
     color: black;
 }
 
-body.dark-mode #about-p {
+#about-p {
     color: light-grey;
 }
 
-body.dark-mode input,
+input,
 textarea {
     background-color: var(--light-grey);
     color: black;
 }
 
-body.dark-mode button {
+button {
     color: var(--light-grey);
 }
 
-body.dark-mode footer {
+footer {
     background-color: var(--dark-grey);
 }
 
-body.dark-mode footer p {
+footer p {
     color: var(--gold);
     background-color: var(--dark-grey);
-}
+}}
 
 /* Media Queries for Mobile Devices */
 @media only screen and (max-width: 600px) {

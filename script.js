@@ -17,6 +17,19 @@ submitBtn.addEventListener('click', function (event) {
 });
 
 
+// clicking Dark_mode button changes the page mode
+
+darkModeLink.addEventListener('click', function () {
+
+    document.body.classList.toggle('dark-mode');
+
+    if (darkModeLink.innerHTML === 'Light Mode') {
+        darkModeLink.innerHTML = 'Dark Mode'
+    } else {
+        darkModeLink.innerHTML = 'Light Mode'
+    }
+})
+
 
 // call showDescription or hideDescription depending on button label
 
@@ -57,7 +70,7 @@ function showDescription(containerName) {
     text.style.display = "block";
 
     // make scroll visible
-    divImg.style.overflow = "scroll";
+    divImg.style.overflowY = "scroll";
 
     // assign height for the container
     divImg.style.height = `${conteinerHeight}px`;

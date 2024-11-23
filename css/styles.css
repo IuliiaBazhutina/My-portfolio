@@ -1,21 +1,40 @@
-/* General Styles */
+:root {
+    --light-grey: #adadae;
+    --grey: #333;
+    --dark-grey: #1c1c1c;
+    --gold: rgb(153, 135, 88);
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0 0 70px 0;
-    line-height: 1;
+    scroll-behavior: smooth;
 }
 
 header {
-    background-color: #333;
+    background-color: var(--grey);
     color: white;
     padding: 20px;
     text-align: center;
 }
 
+#darkModeLink {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 20px;
+    color: rgb(153, 135, 88);
+    font-size: small;
+}
+
+#darkModeLink:hover {
+    text-decoration: underline;
+}
+
 h2 {
-    color: #333;
+    color: var(--grey);
 }
 
 nav ul {
@@ -59,7 +78,6 @@ section {
     margin: 0 auto;
     width: 90%;
     height: auto;
-    overflow: hidden;
     padding: 0;
 }
 
@@ -67,19 +85,25 @@ img {
     width: 100%;
     height: auto;
     border-radius: 8px;
+    padding: 0;
+    margin: 0;
 }
 
 div.divImg {
     margin: 0;
-    /* overflow-y: scroll; */
-    overflow-y: hidden;
+    padding: 0;
+    border-radius: 8px;
+}
+
+div p {
+    display: none;
 }
 
 p {
     width: fit-content;
     text-wrap: pretty;
     color: black;
-    margin: 0;
+    margin: 5px;
 }
 
 span.bold {
@@ -95,7 +119,6 @@ span.error {
 form {
     width: 100%;
 }
-
 
 div.divContact {
     display: grid;
@@ -140,10 +163,71 @@ footer {
 }
 
 footer p {
+    display: block;
     color: white;
     width: 100%;
 }
 
+
+/* Dark mode*/
+body.dark-mode {
+    background-color: black;
+}
+
+body.dark-mode header {
+    background-color: var(--dark-grey);
+    color: var(--gold);
+}
+
+body.dark-mode h2 {
+    color: var(--light-grey);
+}
+
+body.dark-mode a {
+    color: var(--light-grey);
+    background-color: var(--dark-grey);
+}
+
+body.dark-mode section {
+    background-color: var(--grey);
+    color: var(--light-grey);
+}
+
+body.dark-mode div.divImg {
+    background-color: var(--light-grey);
+    color: black;
+}
+
+body.dark-mode p {
+    color: var(--light-grey);
+}
+
+body.dark-mode div p {
+    color: black;
+}
+
+body.dark-mode #about-p {
+    color: light-grey;
+}
+
+body.dark-mode input,
+textarea {
+    background-color: var(--light-grey);
+    color: black;
+}
+
+body.dark-mode button {
+    color: var(--light-grey);
+}
+
+body.dark-mode footer {
+    background-color: var(--dark-grey);
+}
+
+body.dark-mode footer p {
+    color: var(--gold);
+    background-color: var(--dark-grey);
+}
 
 /* Media Queries for Mobile Devices */
 @media only screen and (max-width: 600px) {

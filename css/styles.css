@@ -83,7 +83,7 @@ section {
 }
 
 .filter-btn {
-    margin: 10px auto;
+    margin: 0 auto 10px;
     padding: 10px;
     background-color: var(--gold);
 }

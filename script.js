@@ -1,22 +1,3 @@
-
-// clicking next buttons pass their container names to function checkButton
-
-project1Btn.addEventListener('click', () => { checkButton('.container1') });
-project2Btn.addEventListener('click', () => { checkButton('.container2') });
-project3Btn.addEventListener('click', () => { checkButton('.container3') });
-project4Btn.addEventListener('click', () => { checkButton('.container4') });
-
-
-// clicking submit button call checkValidation
-
-submitBtn.addEventListener('click', function (event) {
-
-    // cancel default behaviour of the form   
-    event.preventDefault();
-    checkValidation();
-});
-
-
 // clicking Dark_mode button changes the page mode
 
 darkModeLink.addEventListener('click', function () {
@@ -32,117 +13,71 @@ darkModeLink.addEventListener('click', function () {
 
 
 
-const filterButtonJavascript = document.getElementById('javascript');
-filterButtonJavascript.addEventListener('click', function () {
+// if filter button is clicked the function iterates all the projects and displays projects of the chosen category
 
-    const galleryContainer = document.querySelector('.gallery-container');
-    galleryContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projects = document.querySelectorAll('.project');
 
-    const div1 = document.querySelector('.container1');
-    div1.style.display = 'block';
-    div1.style.width = '45%';
-
-    const div2 = document.querySelector('.container2');
-    div2.style.display = 'block';
-    div2.style.width = '45%';
-
-    const div3 = document.querySelector('.container3');
-    div3.style.display = 'none';
-
-    const div4 = document.querySelector('.container4');
-    div4.style.display = 'none';
-})
+filterButtons.forEach(button => {
+    button.addEventListener('click', function () {
+        const category = this.getAttribute('data-category');
+        projects.forEach(project => {
+            if (project.getAttribute('data-category') === category || category === 'all the projects') {
+                project.style.display = 'block';
+            } else {
+                project.style.display = 'none';
+            }
+        });
+    });
+});
 
 
 
-const filterButtonHtmlCss = document.getElementById('html/css');
-filterButtonHtmlCss.addEventListener('click', function () {
 
-    const galleryContainer = document.querySelector('.gallery-container');
-    galleryContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
+// if one of project buttons is clicked the function calls a function checkButton with a project as a paremeter 
 
-    const div3 = document.querySelector('.container3');
-    div3.style.display = 'block';
-    div3.style.width = '45%';
-
-    const div4 = document.querySelector('.container4');
-    div4.style.display = 'block';
-    div4.style.width = '45%';
-
-    const div1 = document.querySelector('.container1');
-    div1.style.display = 'none';
-
-    const div2 = document.querySelector('.container2');
-    div2.style.display = 'none';
-})
-
-
-
-const filterButtonAll = document.getElementById('all-projects');
-filterButtonAll.addEventListener('click', function () {
-
-    const galleryContainer = document.querySelector('.gallery-container');
-    galleryContainer.style.gridTemplateColumns = 'repeat(4, 1fr)';
-
-    const div1 = document.querySelector('.container1');
-    div1.style.display = 'block';
-    div1.style.width = '90%';
-
-    const div2 = document.querySelector('.container2');
-    div2.style.display = 'block';
-    div2.style.width = '90%';
-
-    const div3 = document.querySelector('.container3');
-    div3.style.display = 'block';
-    div3.style.width = '90%';
-
-    const div4 = document.querySelector('.container4');
-    div4.style.display = 'block';
-    div4.style.width = '90%';
+projects.forEach(project => {
+    project.addEventListener('click', function () {
+        checkButton(project);
+    })
 })
 
 
 
 // call showDescription or hideDescription depending on button label
 
-function checkButton(containerName) {
-
-    // get container by classname
-    const container = document.querySelector(containerName);
+function checkButton(project) {
 
     // get button from the container
-    const btn = container.querySelector('button');
+    const btn = project.querySelector('button');
 
     // check button label and call  showDescription or hideDescription
     if (btn.innerHTML === "Show details") {
-        showDescription(containerName);
+        showDescription(project);
     }
-    else { hideDescription(containerName) }
+    else { hideDescription(project) }
 };
 
 
 
 // shows project description, hide picture, renew button label
 
-function showDescription(containerName) {
-
-    // get container by classname
-    const container = document.querySelector(containerName);
+function showDescription(project) {
 
     // get height of the container divImg
-    const divImg = container.querySelector('.divImg');
+    const divImg = project.querySelector('.divImg');
     const containerHeight = divImg.clientHeight;
 
     // hide the picture
-    const img = container.querySelector('img');
+    const img = project.querySelector('img');
     img.style.display = "none";
 
     // show the description
-    const text = container.querySelector('p');
+    const text = project.querySelector('p');
     text.style.display = "block";
 
     // show the link to the live page
-    const link = container.querySelector('a');
+    const link = project.querySelector('a');
     link.style.display = "block";
 
     // make scroll visible
@@ -152,7 +87,7 @@ function showDescription(containerName) {
     divImg.style.height = `${containerHeight}px`;
 
     // change button label
-    const btn = container.querySelector('button');
+    const btn = project.querySelector('button');
     btn.innerHTML = "Hide details";
 };
 
@@ -160,30 +95,41 @@ function showDescription(containerName) {
 
 // hides project description, shows picture, renew button label
 
-function hideDescription(containerName) {
+function hideDescription(project) {
 
-    const container = document.querySelector(containerName);
+    // const container = document.querySelector(containerName);
 
     // show the picture
-    const img = container.querySelector('img');
+    const img = project.querySelector('img');
     img.style.display = "block";
 
     // hide the description
-    const text = container.querySelector('p');
+    const text = project.querySelector('p');
     text.style.display = "none";
 
     // hide the link to the live page
-    const link = container.querySelector('a');
+    const link = project.querySelector('a');
     link.style.display = "none";
 
     // hide scroll
-    const divImg = container.querySelector('.divImg');
+    const divImg = project.querySelector('.divImg');
     divImg.style.overflow = "hidden";
 
     // change button label
-    const btn = container.querySelector('button');
+    const btn = project.querySelector('button');
     btn.innerHTML = "Show details";
 };
+
+
+
+// clicking submit button calls a function checkValidation
+
+submitBtn.addEventListener('click', function (event) {
+
+    // cancel default behaviour of the form   
+    event.preventDefault();
+    checkValidation();
+});
 
 
 

@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <!-- Header Section -->
     <header>
         <a id="darkModeLink">Dark mode</a>
@@ -27,20 +28,23 @@
     <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p id='about-p'>There I will write a short bio about myself.</p>
+        <p id='about-p'>I am a student at Humber College, currently in the first semester of the Computer Programming
+            program.<br>During this semester, I have learned the Fundamentals of JavaScript and Web Programming and
+            Design. So far, I have participated in a group project to create a Christmas website.<br>I will continue to
+            update my portfolio as new projects are developed.</p>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
         <div id="div-buttons">
-            <button class="filter-btn" id='javascript'>JavaScript</button>
-            <button class="filter-btn" id='html/css'>HTML/CSS</button>
-            <button class="filter-btn" id='all-projects'>All the projects</button>
+            <button class="filter-btn" data-category="javascript">JavaScript</button>
+            <button class="filter-btn" data-category="html-css">HTML/CSS</button>
+            <button class="filter-btn" data-category="all the projects">All the projects</button>
         </div>
 
         <div class="gallery-container">
 
-            <div class="container1" data-category="javascript">
+            <div class="project" data-category="javascript">
                 <div class="divImg">
                     <img src="images/Project1.jpg" alt="Screenshot of Christmas website" loading="lazy">
                     <p><span class="bold">Christmas website (JavaScript)</span><br><br>1. Christmas recipe book, where
@@ -51,12 +55,12 @@
                     <a href="https://iuliiabazhutina.github.io/Group-project-Christmas-website/">Live page link</a>
                 </div>
                 <div class="divBtn">
-                    <button id="project1Btn" class="projectBtn">Show details</button>
+                    <button id="projectBtn" class="projectBtn">Show details</button>
                 </div>
             </div>
 
-            <div class="container2">
-                <div class="divImg" data-category="javascript">
+            <div class="project" data-category="javascript">
+                <div class="divImg">
                     <img src="images/Project2.jpg" alt="Image with a sign Project2" loading="lazy">
                     <p><span class="bold">Project #2 (JavaScript)</span><br><br>There will be project description. There
                         will be
@@ -64,14 +68,14 @@
                         description.<br><br>There will be project description.There will be project
                         description.<br><br>There will be project description. There will be project
                         description.<br><br>There will be project description.There will be project description.</p>
-                        <a href="#"></a>
+                    <a href="#"></a>
                 </div>
                 <div class="divBtn">
-                    <button id="project2Btn" class="projectBtn">Show details</button>
+                    <button id="projectBtn" class="projectBtn">Show details</button>
                 </div>
             </div>
 
-            <div class="container3" data-category="html-css">
+            <div class="project" data-category="html-css">
                 <div class="divImg">
                     <img src="images/Project3.jpg" alt="Image with a sign Project3" loading="lazy">
                     <p><span class="bold">Project #3 (HTML/CSS)</span><br><br>There will be project description. There
@@ -80,15 +84,15 @@
                         description.<br><br>There will be project description.There will be project
                         description.<br><br>There will be project description. There will be project
                         description.<br><br>There will be project description.There will be project description.</p>
-                        <a href="#"></a>
+                    <a href="#"></a>
                 </div>
 
                 <div class="divBtn">
-                    <button id="project3Btn" class="projectBtn">Show details</button>
+                    <button id="projectBtn" class="projectBtn">Show details</button>
                 </div>
             </div>
 
-            <div class="container4" data-category="html-css">
+            <div class="project" data-category="html-css">
                 <div class="divImg">
                     <img src="images/Project4.jpg" alt="Image with a sign Project4" loading="lazy">
                     <p><span class="bold">Project #4 (HTML/CSS)</span><br><br>There will be project description. There
@@ -97,11 +101,11 @@
                         description.<br><br>There will be project description.There will be project
                         description.<br><br>There will be project description. There will be project
                         description.<br><br>There will be project description.There will be project description.</p>
-                        <a href="#"></a>
+                    <a href="#"></a>
                 </div>
 
                 <div class="divBtn">
-                    <button id="project4Btn" class="projectBtn">Show details</button>
+                    <button id="projectBtn" class="projectBtn">Show details</button>
                 </div>
             </div>
         </div>

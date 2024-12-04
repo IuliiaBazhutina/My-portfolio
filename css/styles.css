@@ -46,7 +46,7 @@ nav ul {
 }
 
 nav ul li {
-    display:inline-flex;
+    display: inline-flex;
     margin: 0 20px;
 }
 
@@ -57,9 +57,15 @@ nav ul li a {
 }
 
 nav ul li a:hover {
+    text-decoration: underline;
     animation: pulse;
-    animation-duration: 2s; 
-    }
+    animation-duration: 2s;
+}
+
+#about-p {
+    font-size: medium;
+    line-height: 150%;
+}
 
 section {
     padding: 20px;
@@ -69,15 +75,14 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#div-buttons{
+#div-buttons {
     margin: 20px;
     display: flex;
-    gap: 50px;
+    gap: 40px;
     justify-content: center;
-    }
+}
 
-.filter-btn{
-    width: 90%;
+.filter-btn {
     margin: 10px auto;
     padding: 10px;
     background-color: var(--gold);
@@ -89,10 +94,7 @@ section {
     width: 100%;
 }
 
-.container1,
-.container2,
-.container3,
-.container4 {
+.project {
     margin: 0 auto;
     width: 90%;
     height: auto;
@@ -108,33 +110,30 @@ img {
     display: block;
 }
 
-/* img:hover {
-    transform: scale(1.1);
-    transform-origin: bottom;
-} */
-
-div.divImg {
+.divImg {
     margin: 0;
     padding: 0;
     border-radius: 8px;
 }
 
-div p, div a {
+div p {
     display: none;
-}
-
-p {
     width: fit-content;
     text-wrap: pretty;
     color: black;
     margin: 5px;
 }
 
-span.bold {
+div a {
+    display: none;
+    margin: 5px 5px 10px;
+}
+
+.bold {
     font-weight: bold;
 }
 
-span.error {
+.error {
     font-size: small;
     color: red;
     margin: 0 0 5px;
@@ -144,7 +143,7 @@ form {
     width: 100%;
 }
 
-div.divContact {
+.divContact {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     width: 100%;
@@ -171,14 +170,14 @@ button {
     width: 100%;
     margin: 10px 0 0;
     padding: 10px;
- 
+
 }
 
 button:hover {
     background-color: rgb(153, 135, 88);
     animation: pulse;
-    animation-duration: 2s; 
-    }
+    animation-duration: 2s;
+}
 
 footer {
     background-color: #333;
@@ -196,63 +195,73 @@ footer p {
 }
 
 
-.dark-mode{
-    background-color: black;
+.dark-mode {
 
- header {
-    background-color: var(--dark-grey);
-    color: var(--gold);
-} 
+    body {
+        background-color: black;
+    }
 
- h2 {
-    color: var(--light-grey);
+    header {
+        background-color: var(--dark-grey);
+        color: var(--gold);
+    }
+
+    h2 {
+        color: var(--light-grey);
+    }
+
+    a {
+        color: var(--light-grey);
+        background-color: var(--dark-grey);
+    }
+
+    section {
+        background-color: var(--grey);
+        color: var(--light-grey);
+    }
+
+    .filter-btn {
+        color: black;
+    }
+
+    .divImg {
+        background-color: var(--light-grey);
+        color: black;
+    }
+
+    p {
+        color: var(--light-grey);
+    }
+
+    div p,
+    div a {
+        color: black;
+        background-color: var(--light-grey);
+    }
+
+    #about-p {
+        color: light-grey;
+    }
+
+    input,
+    textarea {
+        background-color: var(--light-grey);
+        color: black;
+    }
+
+    button {
+        color: var(--light-grey);
+    }
+
+    footer {
+        background-color: var(--dark-grey);
+    }
+
+    footer p {
+        color: var(--gold);
+        background-color: var(--dark-grey);
+    }
 }
-
-a {
-    color: var(--light-grey);
-    background-color: var(--dark-grey);
-}
-
-section {
-    background-color: var(--grey);
-    color: var(--light-grey);
-}
-
-div.divImg {
-    background-color: var(--light-grey);
-    color: black;
-}
-
-p {
-    color: var(--light-grey);
-}
-
-div p {
-    color: black;
-}
-
-#about-p {
-    color: light-grey;
-}
-
-input,
-textarea {
-    background-color: var(--light-grey);
-    color: black;
-}
-
-button {
-    color: var(--light-grey);
-}
-
-footer {
-    background-color: var(--dark-grey);
-}
-
-footer p {
-    color: var(--gold);
-    background-color: var(--dark-grey);
-}}
 
 
 /* Media Queries for Mobile Devices */
@@ -264,9 +273,7 @@ footer p {
     }
 
     nav ul li {
-        display: block;
-        text-align: center;
-        margin: 5px 0;
+        margin: 0 10px;
     }
 
     section {
@@ -274,7 +281,13 @@ footer p {
         margin: 10px;
     }
 
-    p {
+    .gallery-container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+
+    p,
+    a {
         font-size: small;
     }
 }

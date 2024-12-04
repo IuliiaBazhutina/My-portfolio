@@ -31,6 +31,95 @@ darkModeLink.addEventListener('click', function () {
 })
 
 
+
+const filterButtonJavascript = document.getElementById('javascript');
+filterButtonJavascript.addEventListener('click', function() {
+
+    const galleryContainer = document.querySelector('.gallery-container');
+    galleryContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
+
+    const div1 = document.querySelector('.container1');
+    div1.style.display = 'block';
+    div1.style.width = '45%';
+
+    const div2 = document.querySelector('.container2');
+    div2.style.display = 'block';
+    div2.style.width = '45%';
+    
+    const div3 = document.querySelector('.container3');
+    div3.style.display = 'none';
+
+    const div4 = document.querySelector('.container4');
+    div4.style.display = 'none';
+})
+
+
+
+const filterButtonHtmlCss = document.getElementById('html/css');
+filterButtonHtmlCss.addEventListener('click', function() {
+
+    const galleryContainer = document.querySelector('.gallery-container');
+    galleryContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
+
+    const div3 = document.querySelector('.container3');
+    div3.style.display = 'block';
+    div3.style.width = '45%';
+
+    const div4 = document.querySelector('.container4');
+    div4.style.display = 'block';
+    div4.style.width = '45%';
+    
+    const div1 = document.querySelector('.container1');
+    div1.style.display = 'none';
+
+    const div2 = document.querySelector('.container2');
+    div2.style.display = 'none';
+})
+
+
+
+const filterButtonAll= document.getElementById('all-projects');
+filterButtonAll.addEventListener('click', function() {
+
+    const galleryContainer = document.querySelector('.gallery-container');
+    galleryContainer.style.gridTemplateColumns = 'repeat(4, 1fr)';
+
+    const div1 = document.querySelector('.container1');
+    div1.style.display = 'block';
+    div1.style.width = '90%';
+
+    const div2 = document.querySelector('.container2');
+    div2.style.display = 'block';
+    div2.style.width = '90%';
+    
+    const div3 = document.querySelector('.container3');
+    div3.style.display = 'block';
+    div3.style.width = '90%';
+
+    const div4 = document.querySelector('.container4');
+    div4.style.display = 'block';
+    div4.style.width = '90%';
+})
+
+// const projects = document.querySelectorAll('.project');
+
+// filterButtons.forEach(button => {
+//     button.addEventListener('click', function() {
+//         const category = this.getAttribute('data-category');
+//         projects.forEach(project => {
+//             if (project.getAttribute('data-category') === category || category === 'all') {
+//                 project.style.display = 'block';
+//             } else {
+//                 project.style.display = 'none';
+//             }
+//         });
+//     });
+// });
+
+
+
+
+
 // call showDescription or hideDescription depending on button label
 
 function checkButton(containerName) {
@@ -99,7 +188,7 @@ function hideDescription(containerName) {
     // hide scroll
     const divImg = container.querySelector('.divImg');
     divImg.style.overflow = "hidden";
-
+    
     // change button label
     const btn = container.querySelector('button');
     btn.innerHTML = "Show details";

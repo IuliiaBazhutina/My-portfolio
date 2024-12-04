@@ -5,12 +5,15 @@
     --gold: rgb(153, 135, 88);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0 0 70px 0;
-    scroll-behavior: smooth;
 }
 
 header {
@@ -43,7 +46,7 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
+    display:inline-flex;
     margin: 0 20px;
 }
 
@@ -54,8 +57,9 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
-}
+    animation: pulse;
+    animation-duration: 2s; 
+    }
 
 section {
     padding: 20px;
@@ -63,6 +67,20 @@ section {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#div-buttons{
+    margin: 20px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    }
+
+.filter-btn{
+    width: 90%;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: var(--gold);
 }
 
 .gallery-container {
@@ -87,7 +105,13 @@ img {
     border-radius: 8px;
     padding: 0;
     margin: 0;
+    display: block;
 }
+
+/* img:hover {
+    transform: scale(1.1);
+    transform-origin: bottom;
+} */
 
 div.divImg {
     margin: 0;
@@ -147,11 +171,14 @@ button {
     width: 100%;
     margin: 10px 0 0;
     padding: 10px;
+ 
 }
 
 button:hover {
     background-color: rgb(153, 135, 88);
-}
+    animation: pulse;
+    animation-duration: 2s; 
+    }
 
 footer {
     background-color: #333;
@@ -169,7 +196,6 @@ footer p {
 }
 
 
-/* Dark mode*/
 .dark-mode{
     background-color: black;
 
@@ -227,6 +253,7 @@ footer p {
     color: var(--gold);
     background-color: var(--dark-grey);
 }}
+
 
 /* Media Queries for Mobile Devices */
 @media only screen and (max-width: 600px) {

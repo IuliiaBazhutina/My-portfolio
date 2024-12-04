@@ -33,7 +33,7 @@ darkModeLink.addEventListener('click', function () {
 
 
 const filterButtonJavascript = document.getElementById('javascript');
-filterButtonJavascript.addEventListener('click', function() {
+filterButtonJavascript.addEventListener('click', function () {
 
     const galleryContainer = document.querySelector('.gallery-container');
     galleryContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
@@ -45,7 +45,7 @@ filterButtonJavascript.addEventListener('click', function() {
     const div2 = document.querySelector('.container2');
     div2.style.display = 'block';
     div2.style.width = '45%';
-    
+
     const div3 = document.querySelector('.container3');
     div3.style.display = 'none';
 
@@ -56,7 +56,7 @@ filterButtonJavascript.addEventListener('click', function() {
 
 
 const filterButtonHtmlCss = document.getElementById('html/css');
-filterButtonHtmlCss.addEventListener('click', function() {
+filterButtonHtmlCss.addEventListener('click', function () {
 
     const galleryContainer = document.querySelector('.gallery-container');
     galleryContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
@@ -68,7 +68,7 @@ filterButtonHtmlCss.addEventListener('click', function() {
     const div4 = document.querySelector('.container4');
     div4.style.display = 'block';
     div4.style.width = '45%';
-    
+
     const div1 = document.querySelector('.container1');
     div1.style.display = 'none';
 
@@ -78,8 +78,8 @@ filterButtonHtmlCss.addEventListener('click', function() {
 
 
 
-const filterButtonAll= document.getElementById('all-projects');
-filterButtonAll.addEventListener('click', function() {
+const filterButtonAll = document.getElementById('all-projects');
+filterButtonAll.addEventListener('click', function () {
 
     const galleryContainer = document.querySelector('.gallery-container');
     galleryContainer.style.gridTemplateColumns = 'repeat(4, 1fr)';
@@ -91,7 +91,7 @@ filterButtonAll.addEventListener('click', function() {
     const div2 = document.querySelector('.container2');
     div2.style.display = 'block';
     div2.style.width = '90%';
-    
+
     const div3 = document.querySelector('.container3');
     div3.style.display = 'block';
     div3.style.width = '90%';
@@ -100,23 +100,6 @@ filterButtonAll.addEventListener('click', function() {
     div4.style.display = 'block';
     div4.style.width = '90%';
 })
-
-// const projects = document.querySelectorAll('.project');
-
-// filterButtons.forEach(button => {
-//     button.addEventListener('click', function() {
-//         const category = this.getAttribute('data-category');
-//         projects.forEach(project => {
-//             if (project.getAttribute('data-category') === category || category === 'all') {
-//                 project.style.display = 'block';
-//             } else {
-//                 project.style.display = 'none';
-//             }
-//         });
-//     });
-// });
-
-
 
 
 
@@ -148,7 +131,7 @@ function showDescription(containerName) {
 
     // get height of the container divImg
     const divImg = container.querySelector('.divImg');
-    const conteinerHeight = divImg.clientHeight;
+    const containerHeight = divImg.clientHeight;
 
     // hide the picture
     const img = container.querySelector('img');
@@ -158,11 +141,15 @@ function showDescription(containerName) {
     const text = container.querySelector('p');
     text.style.display = "block";
 
+    // show the link to the live page
+    const link = container.querySelector('a');
+    link.style.display = "block";
+
     // make scroll visible
     divImg.style.overflowY = "scroll";
 
     // assign height for the container
-    divImg.style.height = `${conteinerHeight}px`;
+    divImg.style.height = `${containerHeight}px`;
 
     // change button label
     const btn = container.querySelector('button');
@@ -185,10 +172,14 @@ function hideDescription(containerName) {
     const text = container.querySelector('p');
     text.style.display = "none";
 
+    // hide the link to the live page
+    const link = container.querySelector('a');
+    link.style.display = "none";
+
     // hide scroll
     const divImg = container.querySelector('.divImg');
     divImg.style.overflow = "hidden";
-    
+
     // change button label
     const btn = container.querySelector('button');
     btn.innerHTML = "Show details";
